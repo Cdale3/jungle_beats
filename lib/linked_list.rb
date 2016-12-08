@@ -9,17 +9,23 @@ class LinkedList
   def initialize
     @head = nil
     @count = 0
-    # @current = 0
   end
 
   def append(data)
-    @head = Node.new(data)
-
+    if @head
+      @head.append(data)
+    else
+      @head = Node.new(data)
+    end
     data
   end
 
   def count
-    @count += 1
+    if @head
+      @head.count
+    else
+      0
+    end
   end
 
   def next_node
